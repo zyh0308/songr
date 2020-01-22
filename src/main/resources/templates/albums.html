@@ -9,11 +9,22 @@
 <ul>
     <li th:each="album:${albumList}">
         <p th:text="${album}"></p>
-        <img th:src="${album.imgUrl}" ></img>
-
-
+        <img th:src="${album.imgUrl}" >
 
     </li>
+
+    <form action="/albums" method="POST">
+        <h2>Add your favorite albums </h2>
+        album title: <input type="text" name="title">
+        artist name: <input type="text" name="artist">
+        songCount:<input type="number" name="songCount">
+        length:<input type="number" name="length">
+        imgUrl<input type="text" name="imgUrl">
+        <input type="submit">
+
+
+    </form>
 </ul>
 </body>
 </html>
+

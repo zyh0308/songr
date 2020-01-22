@@ -1,6 +1,18 @@
 package yihang.songr;
 
+import com.sun.javafx.beans.IDProperty;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Album {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
+
     public String title;
     public String artist;
     public int songCount;
@@ -17,6 +29,12 @@ public class Album {
 
     public String toString(){
         return this.title + " " + this.artist + this.songCount + " "+ this.length+" ";
+
+    }
+
+    //Add a default constructor
+
+    public Album(){
 
     }
 
