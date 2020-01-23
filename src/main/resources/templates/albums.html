@@ -11,7 +11,19 @@
         <p th:text="${album}"></p>
         <img th:src="${album.imgUrl}" >
 
+
+        <form action="/songs" method="POST">
+            <h2>Add a song</h2>
+            <input type="hidden" th:value="${album.id}" name="id">
+            song title:<input type="text" name="songTitle">
+            song length:<input type="number" name="length">
+            song trackNumber<input type="number" name="trackNumber">
+            submit <input type="submit" value="add a song to album">
+
+        </form>
+
     </li>
+</ul>
 
     <form action="/albums" method="POST">
         <h2>Add your favorite albums </h2>
@@ -24,7 +36,6 @@
 
 
     </form>
-</ul>
 </body>
 </html>
 
